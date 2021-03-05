@@ -1,0 +1,39 @@
+version: 1
+update_configs:
+  - package_manager: 'docker'
+    directory: '/docker/node/semver-security'
+    update_schedule: 'daily'
+    automerged_updates:
+      - match:
+          dependency_type: 'all'
+          update_type: 'semver:security'
+    ignored_updates:
+      - match:
+          dependency_name: 'node'
+          version_requirement: "15.x.x"
+    directory: '/docker/node/semver-patch'
+    update_schedule: 'daily'
+    automerged_updates:
+      - match:
+          dependency_type: 'all'
+          update_type: 'semver:patch'
+    ignored_updates:
+      - match:
+          dependency_name: 'node'
+          version_requirement: "15.x.x"          
+    directory: '/docker/semver-minor'
+    update_schedule: 'daily'
+    automerged_updates:
+      - match:
+          dependency_type: 'all'
+          update_type: 'semver:minor'
+    ignored_updates:
+      - match:
+          dependency_name: 'node'
+          version_requirement: "15.x.x"   
+    directory: '/docker/node/default'
+    update_schedule: 'daily'
+    automerged_updates:
+      - match:
+          dependency_type: 'all'
+          update_type: 'semver:minor'                 
