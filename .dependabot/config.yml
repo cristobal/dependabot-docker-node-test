@@ -23,7 +23,7 @@ update_configs:
           dependency_name: 'node'
           version_requirement: "15.x.x"          
   - package_manager: 'docker'          
-    directory: '/docker/semver-minor'
+    directory: '/docker/node/semver-minor'
     update_schedule: 'daily'
     automerged_updates:
       - match:
