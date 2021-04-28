@@ -1,0 +1,42 @@
+version: 2
+updates:
+- package-ecosystem: docker
+  directory: "/docker/node/security-patch"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: node
+    versions:
+    - ">= 15.a, < 16"
+- package-ecosystem: docker
+  directory: "/docker/node/semver-patch"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: node
+    versions:
+    - ">= 15.a, < 16"
+- package-ecosystem: docker
+  directory: "/docker/node/semver-minor"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: node
+    versions:
+    - ">= 15.a, < 16"
+- package-ecosystem: docker
+  directory: "/docker/node/default"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: node
+    versions:
+    - ">= 15.a, < 16"
